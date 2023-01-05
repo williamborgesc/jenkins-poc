@@ -22,7 +22,7 @@ public class QuoteService {
 
     public Quote getRandom() throws IOException {
         Quote quote = loadQuote().get(new Random().nextInt(50));
-        quote.setHostname(InetAddress.getLoopbackAddress().getHostName());
+        quote.setHostname(InetAddress.getLoopbackAddress().getHostAddress());
         quote.setApplicationVersion(version);
         return quote;
     }
